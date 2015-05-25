@@ -1,0 +1,422 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B2643D261B136D0800284F50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D251B136D0800284F50 /* AppDelegate.swift */; };
+		B2643D281B136D0800284F50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D271B136D0800284F50 /* ViewController.swift */; };
+		B2643D2B1B136D0800284F50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2643D291B136D0800284F50 /* Main.storyboard */; };
+		B2643D2D1B136D0800284F50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2643D2C1B136D0800284F50 /* Images.xcassets */; };
+		B2643D301B136D0800284F50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2643D2E1B136D0800284F50 /* LaunchScreen.xib */; };
+		B2643D3C1B136D0800284F50 /* BreadtripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D3B1B136D0800284F50 /* BreadtripTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2643D361B136D0800284F50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2643D181B136D0800284F50 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2643D1F1B136D0800284F50;
+			remoteInfo = Breadtrip;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B2643D201B136D0800284F50 /* Breadtrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breadtrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2643D241B136D0800284F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2643D251B136D0800284F50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B2643D271B136D0800284F50 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B2643D2A1B136D0800284F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B2643D2C1B136D0800284F50 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2643D2F1B136D0800284F50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		B2643D351B136D0800284F50 /* BreadtripTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BreadtripTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2643D3A1B136D0800284F50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2643D3B1B136D0800284F50 /* BreadtripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadtripTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B2643D1D1B136D0800284F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2643D321B136D0800284F50 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2643D171B136D0800284F50 = {
+			isa = PBXGroup;
+			children = (
+				B2643D221B136D0800284F50 /* Breadtrip */,
+				B2643D381B136D0800284F50 /* BreadtripTests */,
+				B2643D211B136D0800284F50 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B2643D211B136D0800284F50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B2643D201B136D0800284F50 /* Breadtrip.app */,
+				B2643D351B136D0800284F50 /* BreadtripTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B2643D221B136D0800284F50 /* Breadtrip */ = {
+			isa = PBXGroup;
+			children = (
+				B2643D251B136D0800284F50 /* AppDelegate.swift */,
+				B2643D271B136D0800284F50 /* ViewController.swift */,
+				B2643D291B136D0800284F50 /* Main.storyboard */,
+				B2643D2C1B136D0800284F50 /* Images.xcassets */,
+				B2643D2E1B136D0800284F50 /* LaunchScreen.xib */,
+				B2643D231B136D0800284F50 /* Supporting Files */,
+			);
+			path = Breadtrip;
+			sourceTree = "<group>";
+		};
+		B2643D231B136D0800284F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2643D241B136D0800284F50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2643D381B136D0800284F50 /* BreadtripTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2643D3B1B136D0800284F50 /* BreadtripTests.swift */,
+				B2643D391B136D0800284F50 /* Supporting Files */,
+			);
+			path = BreadtripTests;
+			sourceTree = "<group>";
+		};
+		B2643D391B136D0800284F50 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2643D3A1B136D0800284F50 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B2643D1F1B136D0800284F50 /* Breadtrip */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2643D3F1B136D0800284F50 /* Build configuration list for PBXNativeTarget "Breadtrip" */;
+			buildPhases = (
+				B2643D1C1B136D0800284F50 /* Sources */,
+				B2643D1D1B136D0800284F50 /* Frameworks */,
+				B2643D1E1B136D0800284F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Breadtrip;
+			productName = Breadtrip;
+			productReference = B2643D201B136D0800284F50 /* Breadtrip.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B2643D341B136D0800284F50 /* BreadtripTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2643D421B136D0800284F50 /* Build configuration list for PBXNativeTarget "BreadtripTests" */;
+			buildPhases = (
+				B2643D311B136D0800284F50 /* Sources */,
+				B2643D321B136D0800284F50 /* Frameworks */,
+				B2643D331B136D0800284F50 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2643D371B136D0800284F50 /* PBXTargetDependency */,
+			);
+			name = BreadtripTests;
+			productName = BreadtripTests;
+			productReference = B2643D351B136D0800284F50 /* BreadtripTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B2643D181B136D0800284F50 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Feng;
+				TargetAttributes = {
+					B2643D1F1B136D0800284F50 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					B2643D341B136D0800284F50 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = B2643D1F1B136D0800284F50;
+					};
+				};
+			};
+			buildConfigurationList = B2643D1B1B136D0800284F50 /* Build configuration list for PBXProject "Breadtrip" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B2643D171B136D0800284F50;
+			productRefGroup = B2643D211B136D0800284F50 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B2643D1F1B136D0800284F50 /* Breadtrip */,
+				B2643D341B136D0800284F50 /* BreadtripTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B2643D1E1B136D0800284F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2643D2B1B136D0800284F50 /* Main.storyboard in Resources */,
+				B2643D301B136D0800284F50 /* LaunchScreen.xib in Resources */,
+				B2643D2D1B136D0800284F50 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2643D331B136D0800284F50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B2643D1C1B136D0800284F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2643D281B136D0800284F50 /* ViewController.swift in Sources */,
+				B2643D261B136D0800284F50 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2643D311B136D0800284F50 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2643D3C1B136D0800284F50 /* BreadtripTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2643D371B136D0800284F50 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2643D1F1B136D0800284F50 /* Breadtrip */;
+			targetProxy = B2643D361B136D0800284F50 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B2643D291B136D0800284F50 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2643D2A1B136D0800284F50 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B2643D2E1B136D0800284F50 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2643D2F1B136D0800284F50 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B2643D3D1B136D0800284F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B2643D3E1B136D0800284F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B2643D401B136D0800284F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Breadtrip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B2643D411B136D0800284F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Breadtrip/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B2643D431B136D0800284F50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BreadtripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breadtrip.app/Breadtrip";
+			};
+			name = Debug;
+		};
+		B2643D441B136D0800284F50 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = BreadtripTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Breadtrip.app/Breadtrip";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B2643D1B1B136D0800284F50 /* Build configuration list for PBXProject "Breadtrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2643D3D1B136D0800284F50 /* Debug */,
+				B2643D3E1B136D0800284F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2643D3F1B136D0800284F50 /* Build configuration list for PBXNativeTarget "Breadtrip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2643D401B136D0800284F50 /* Debug */,
+				B2643D411B136D0800284F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		B2643D421B136D0800284F50 /* Build configuration list for PBXNativeTarget "BreadtripTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2643D431B136D0800284F50 /* Debug */,
+				B2643D441B136D0800284F50 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B2643D181B136D0800284F50 /* Project object */;
+}
