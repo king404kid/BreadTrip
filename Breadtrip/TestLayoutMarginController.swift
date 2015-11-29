@@ -8,20 +8,12 @@
 
 import UIKit
 
-class MineController: UIViewController
+class TestLayoutMarginController: UIViewController
 {
     override func viewDidLoad() {
         super.viewDidLoad()
         
         testLayoutMargin()
-    }
-    
-    override func loadView() {
-        super.loadView()
-        
-        let view = UIView()
-        view.backgroundColor = UIColor.clearColor()
-        self.view = view
     }
     
     // layoutMargin和preservesSuperviewLayoutMargins的实验结论如下：

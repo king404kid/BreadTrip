@@ -27,6 +27,11 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // 取消选中状态
+        if let selectedIndex = tableView?.indexPathForSelectedRow() {
+            tableView?.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
+        }
     }
     
     override func viewDidAppear(animated: Bool) {

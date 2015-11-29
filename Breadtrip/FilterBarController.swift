@@ -33,8 +33,8 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        initButtons()
-        initContainer()
+//        initButtons()
+//        initContainer()
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -43,6 +43,9 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initButtons()
+        initContainer()
     }
     
     override func viewDidAppear(animated: Bool) {

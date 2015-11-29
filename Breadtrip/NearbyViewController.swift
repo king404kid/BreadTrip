@@ -26,6 +26,11 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
         // 隐藏tabbar，之所以放在这里跟上面原因一样
 //        self.tabBarController?.tabBar.hidden = true
         
+        // 取消选中状态
+        if let selectedIndex = nearbyTableView.indexPathForSelectedRow() {
+            nearbyTableView.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
+        }
+        
         // 实在找不到方法，强制画一个view作为导航栏的背景
         var statusBg = UIView(frame: CGRect(x: 0, y: -20, width: 375, height: 20))
         statusBg.backgroundColor = UIColor.blackColor()
@@ -72,18 +77,21 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     // 设置默认选中的item
     func setDefaultSelectItem(row: Int, section: Int) {
         let indexPath = NSIndexPath(forItem: row, inSection: section)
-        // 调用系统选中函数
+        // 调用系统选中函数，滚动到指定位置
         nearbyCollectionView.selectItemAtIndexPath(indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.None)
         // 调用自定义选中函数
-        let cell = nearbyCollectionView.cellForItemAtIndexPath(indexPath) as? NearbyCollectionCell
-        cell?.animateSelected = true
-        // 把cell里面的按钮坐标转换成全局坐标，注意参数的顺序(toView与fromView)
-        originFrame = cell!.convertRect(cell!.nearbyItem.frame, toView: self.view)
-        var layout = nearbyCollectionView.collectionViewLayout as UICollectionViewFlowLayout
-        // 这里要算出第一个的准确位置，由于默认有可能不是第一个，所以要减去多余偏移
-        originFrame?.origin.x -= layout.itemSize.width * CGFloat(row)
-        lastName = cell?.nearbyItem.currentTitle
-        lastIndex = CGFloat(indexPath.row)
+        self.selectedCell?.animateSelected = false
+        if let cell = nearbyCollectionView.cellForItemAtIndexPath(indexPath) as? NearbyCollectionCell {
+            self.selectedCell = cell
+            self.selectedCell?.animateSelected = true
+            // 把cell里面的按钮坐标转换成全局坐标，注意参数的顺序(toView与fromView)
+            originFrame = cell.convertRect(cell.nearbyItem.frame, toView: self.view)
+            var layout = nearbyCollectionView.collectionViewLayout as UICollectionViewFlowLayout
+            // 这里要算出第一个的准确位置，由于默认有可能不是第一个，所以要减去多余偏移
+            originFrame?.origin.x -= layout.itemSize.width * CGFloat(row)
+            lastName = cell.nearbyItem.currentTitle
+            lastIndex = CGFloat(indexPath.row)
+        }
     }
     
     // 滑块，用于选中滑动动画

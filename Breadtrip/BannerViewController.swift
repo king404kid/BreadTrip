@@ -32,6 +32,12 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
         initBannerWithFrame()
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        removeTimer()
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
@@ -72,10 +78,10 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             origin.x = pagesScrollViewSize.width
             bannerScrollView.contentOffset = origin
             bannerIndex = 0
-            
-            // 添加定时器
-            addTimer()
         }
+        
+        // 添加定时器
+        addTimer()
     }
     
     // 这里不能加private前缀，要不然找不到次方法，又被坑了好久

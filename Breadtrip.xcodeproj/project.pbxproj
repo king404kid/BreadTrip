@@ -20,11 +20,14 @@
 		B2643D461B136DFD00284F50 /* BreadtripTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D451B136DFD00284F50 /* BreadtripTabBarController.swift */; };
 		B2643D481B13703A00284F50 /* DestinationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D471B13703A00284F50 /* DestinationController.swift */; };
 		B2643D4A1B13787000284F50 /* SaleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D491B13787000284F50 /* SaleController.swift */; };
-		B2643D4C1B13788100284F50 /* MineController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D4B1B13788100284F50 /* MineController.swift */; };
+		B2643D4C1B13788100284F50 /* TestLayoutMarginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2643D4B1B13788100284F50 /* TestLayoutMarginController.swift */; };
 		B2B016031BE1140F00039F18 /* FilterBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B016021BE1140F00039F18 /* FilterBarItem.swift */; };
 		B2B1842E1B8378C40060D85A /* NearbyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B1842D1B8378C40060D85A /* NearbyCollectionCell.swift */; };
 		B2B184301B837E910060D85A /* NearbyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B1842F1B837E910060D85A /* NearbyModel.swift */; };
+		B2B4179A1C00780E008C9498 /* RegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B417991C00780E008C9498 /* RegisterController.m */; };
+		B2BD4F2E1BFA1C6B0027FDA4 /* MineController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BD4F2D1BFA1C6B0027FDA4 /* MineController.m */; };
 		B2BE32211B29AE1A0039C53D /* RecommendDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE32201B29AE1A0039C53D /* RecommendDetailViewController.swift */; };
+		B2BEB4081BFCD41E004F9D7A /* TestResponderChainController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2BEB4071BFCD41E004F9D7A /* TestResponderChainController.m */; };
 		B2BED2671BDC975800E1166E /* SaleTypeVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BED2661BDC975800E1166E /* SaleTypeVo.swift */; };
 		B2BED2691BDC986300E1166E /* SaleListVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BED2681BDC986300E1166E /* SaleListVo.swift */; };
 		B2BED26D1BDCA0A500E1166E /* SaleFilterVo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BED26C1BDCA0A500E1166E /* SaleFilterVo.swift */; };
@@ -84,11 +87,17 @@
 		B2643D451B136DFD00284F50 /* BreadtripTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreadtripTabBarController.swift; sourceTree = "<group>"; };
 		B2643D471B13703A00284F50 /* DestinationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationController.swift; sourceTree = "<group>"; };
 		B2643D491B13787000284F50 /* SaleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleController.swift; sourceTree = "<group>"; };
-		B2643D4B1B13788100284F50 /* MineController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineController.swift; sourceTree = "<group>"; };
+		B2643D4B1B13788100284F50 /* TestLayoutMarginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestLayoutMarginController.swift; sourceTree = "<group>"; };
 		B2B016021BE1140F00039F18 /* FilterBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterBarItem.swift; sourceTree = "<group>"; };
 		B2B1842D1B8378C40060D85A /* NearbyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyCollectionCell.swift; sourceTree = "<group>"; };
 		B2B1842F1B837E910060D85A /* NearbyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearbyModel.swift; sourceTree = "<group>"; };
+		B2B417981C00780E008C9498 /* RegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterController.h; sourceTree = "<group>"; };
+		B2B417991C00780E008C9498 /* RegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterController.m; sourceTree = "<group>"; };
+		B2BD4F2C1BFA1C6B0027FDA4 /* MineController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineController.h; sourceTree = "<group>"; };
+		B2BD4F2D1BFA1C6B0027FDA4 /* MineController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineController.m; sourceTree = "<group>"; };
 		B2BE32201B29AE1A0039C53D /* RecommendDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendDetailViewController.swift; sourceTree = "<group>"; };
+		B2BEB4061BFCD41E004F9D7A /* TestResponderChainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestResponderChainController.h; sourceTree = "<group>"; };
+		B2BEB4071BFCD41E004F9D7A /* TestResponderChainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestResponderChainController.m; sourceTree = "<group>"; };
 		B2BED2661BDC975800E1166E /* SaleTypeVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleTypeVo.swift; sourceTree = "<group>"; };
 		B2BED2681BDC986300E1166E /* SaleListVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleListVo.swift; sourceTree = "<group>"; };
 		B2BED26C1BDCA0A500E1166E /* SaleFilterVo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaleFilterVo.swift; sourceTree = "<group>"; };
@@ -338,7 +347,13 @@
 		B2C76CE61BE7B3C10097B8DD /* mine */ = {
 			isa = PBXGroup;
 			children = (
-				B2643D4B1B13788100284F50 /* MineController.swift */,
+				B2643D4B1B13788100284F50 /* TestLayoutMarginController.swift */,
+				B2BEB4061BFCD41E004F9D7A /* TestResponderChainController.h */,
+				B2BEB4071BFCD41E004F9D7A /* TestResponderChainController.m */,
+				B2BD4F2C1BFA1C6B0027FDA4 /* MineController.h */,
+				B2BD4F2D1BFA1C6B0027FDA4 /* MineController.m */,
+				B2B417981C00780E008C9498 /* RegisterController.h */,
+				B2B417991C00780E008C9498 /* RegisterController.m */,
 			);
 			name = mine;
 			sourceTree = "<group>";
@@ -510,7 +525,7 @@
 				B22B458D1B5B71720013BA8C /* SearchViewController.swift in Sources */,
 				B2C80A191B80D4DE000FFE58 /* NearbyViewController.swift in Sources */,
 				B2C56CD91BE10FE900037837 /* FilterBarController.swift in Sources */,
-				B2643D4C1B13788100284F50 /* MineController.swift in Sources */,
+				B2643D4C1B13788100284F50 /* TestLayoutMarginController.swift in Sources */,
 				B2B016031BE1140F00039F18 /* FilterBarItem.swift in Sources */,
 				B2C0BF4B1B2713B0008F0289 /* RecommendTableViewCell.swift in Sources */,
 				B2C05C781BD370C700BC787A /* DestinationCollectionHeader.swift in Sources */,
@@ -528,11 +543,13 @@
 				B2BED2671BDC975800E1166E /* SaleTypeVo.swift in Sources */,
 				B2C6F26E1B6BC58400891086 /* SearchBarController.swift in Sources */,
 				B2B1842E1B8378C40060D85A /* NearbyCollectionCell.swift in Sources */,
+				B2B4179A1C00780E008C9498 /* RegisterController.m in Sources */,
 				B2BFE6521BDC800C009E74AC /* SaleVo.swift in Sources */,
 				B2BF10401BD33D1100ABAB4A /* DestinationVo.swift in Sources */,
 				B2BFE6501BDC7FFF009E74AC /* SaleModel.swift in Sources */,
 				B2C412BD1BE9005500DB0470 /* FilterModel.swift in Sources */,
 				B22B45871B5A3F9A0013BA8C /* BannerDetailViewController.swift in Sources */,
+				B2BEB4081BFCD41E004F9D7A /* TestResponderChainController.m in Sources */,
 				B2BED26F1BDCA81C00E1166E /* SaleTableCell.swift in Sources */,
 				B2BE32211B29AE1A0039C53D /* RecommendDetailViewController.swift in Sources */,
 				B2C6C0A21BAE4921004B2CE1 /* SearchViewCell.swift in Sources */,
@@ -541,6 +558,7 @@
 				B2C74C521B37937C00AABA24 /* BannerViewController.swift in Sources */,
 				B2C765341B6DAD320044C52C /* SearchSegue.swift in Sources */,
 				B2643D461B136DFD00284F50 /* BreadtripTabBarController.swift in Sources */,
+				B2BD4F2E1BFA1C6B0027FDA4 /* MineController.m in Sources */,
 				B2BED2691BDC986300E1166E /* SaleListVo.swift in Sources */,
 				B2643D281B136D0800284F50 /* RecommendController.swift in Sources */,
 				B2643D4A1B13787000284F50 /* SaleController.swift in Sources */,

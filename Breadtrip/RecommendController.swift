@@ -93,6 +93,11 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
         
         // 隐藏tabbar，之所以放在这里跟上面原因一样
 //        self.tabBarController?.tabBar.hidden = false
+        
+        // 取消选中状态
+        if let selectedIndex = recommendTable.indexPathForSelectedRow() {
+            recommendTable.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -189,6 +194,7 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
     // 设置某行
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("recommendCell", forIndexPath: indexPath) as RecommendTableViewCell
+//        cell.selectionStyle = UITableViewCellSelectionStyle.None  // 不需要选中状态
         let recommendVoList = RecommendModel.instance.recommendVoList
         let recommendVo = recommendVoList[indexPath.row]
         cell.pic.image = UIImage(named: recommendVo.picName)

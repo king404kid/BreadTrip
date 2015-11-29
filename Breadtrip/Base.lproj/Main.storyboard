@@ -452,7 +452,7 @@
         <!--我的-->
         <scene sceneID="VAo-xA-8Qe">
             <objects>
-                <viewController id="0fm-gj-8y2" customClass="MineController" customModule="Breadtrip" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0fm-gj-8y2" customClass="MineController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VwK-PW-Hyg"/>
                         <viewControllerLayoutGuide type="bottom" id="8OV-Bo-rix"/>
