@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: barFont]
         }
         
+        NSThread.sleepForTimeInterval(0.8)  // 延迟800毫秒显示登录界面
+        
         return true
     }
 
