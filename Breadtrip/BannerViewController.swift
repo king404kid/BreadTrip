@@ -14,7 +14,7 @@ protocol BannerViewTapDelegate: class {
 
 class BannerViewController: UIViewController, UIScrollViewDelegate
 {
-    var delegate: BannerViewTapDelegate?
+    weak var delegate: BannerViewTapDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,8 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
         super.viewDidAppear(animated)
         
         initBannerWithFrame()
+        setIndex(0)   // 显示第几页
+        addTimer()
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -73,15 +75,23 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             previousImageView = UIImageView(frame: CGRect(origin: origin, size: pagesScrollViewSize))
             previousImageView?.image = pageImages[bannerPage.numberOfPages-1]
             bannerScrollView.addSubview(previousImageView!)
-            
-            // 定位
-            origin.x = pagesScrollViewSize.width
-            bannerScrollView.contentOffset = origin
-            bannerIndex = 0
         }
-        
-        // 添加定时器
-        addTimer()
+    }
+    
+    // 定位
+    private func setIndex(var index: Int) {
+        if index < 0 || index >= bannerPage.numberOfPages {
+            index = 0
+        }
+        if let pagesScrollViewSize = pageFrame?.size {
+            var origin = CGPoint(x: pagesScrollViewSize.width, y: 0)
+            bannerScrollView.contentOffset = origin
+            bannerIndex = index
+            bannerPage.currentPage = bannerIndex
+            currentImageView?.image = pageImages[bannerIndex]
+            previousImageView?.image = bannerIndex == 0 ? pageImages[bannerPage.numberOfPages-1] : pageImages[bannerIndex-1]
+            nextImageView?.image = bannerIndex == bannerPage.numberOfPages-1 ? pageImages[0] : pageImages[bannerIndex+1]
+        }
     }
     
     // 这里不能加private前缀，要不然找不到次方法，又被坑了好久
@@ -142,7 +152,7 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             nextImageView?.image = bannerIndex == bannerPage.numberOfPages-1 ? pageImages[0] : pageImages[bannerIndex+1]
         }
         let pagesScrollViewSize = pageFrame!.size
-        if offset.x == 0 {
+        if offset.x <= 0 {
             currentImageView?.image = previousImageView?.image
             bannerScrollView.contentOffset = CGPoint(x: pagesScrollViewSize.width, y: 0)
             previousImageView?.image = nil
@@ -151,8 +161,9 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             } else {
                 bannerIndex--
             }
+            bannerPage.currentPage = bannerIndex
         }
-        if offset.x == 2 * pagesScrollViewSize.width {
+        if offset.x >= 2 * pagesScrollViewSize.width {
             currentImageView?.image = nextImageView?.image
             bannerScrollView.contentOffset = CGPoint(x: pagesScrollViewSize.width, y: 0)
             nextImageView?.image = nil
@@ -161,11 +172,11 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             } else {
                 bannerIndex++
             }
+            bannerPage.currentPage = bannerIndex
         }
-        bannerPage.currentPage = bannerIndex
     }
     
-    // 滚动的时候触发
+    // 滚动的时候触发，会触发多次
     func scrollViewDidScroll(scrollView: UIScrollView) {
         if scrollView == bannerScrollView {
             loadVisiblePages()

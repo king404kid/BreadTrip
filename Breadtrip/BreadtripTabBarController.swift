@@ -16,19 +16,12 @@ class BreadtripTabBarController: UITabBarController
         // 尝试通过修改tabbar内部的结构，达到图片填充效果，但是还是不行
 //        printViewHierarchy(self.tabBar)
 
-        var tabbarItems = self.tabBar.items
-        var tabbarItem = tabbarItems?.first as? UITabBarItem
-//        var image = UIImage(named: "recommend")
-        var image = UIImage(named: "tabbar_destination_normal")
-        image = scaleImageToSize(image, size: CGSize(width: 30, height: 30))
-        // 这里记得修改的是返回值，坑死了！
-        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        tabbarItem?.image = image
-//        image = UIImage(named: "recommend")
-        image = UIImage(named: "tabbar_destination_selected")
-        image = scaleImageToSize(image, size: CGSize(width: 30, height: 30))
-        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        tabbarItem?.selectedImage = image
+        // 尝试修改tabbar的图片
+//        var tabbarItems = self.tabBar.items
+//        var tabbarItem = tabbarItems?.first as? UITabBarItem
+//        tabbarItem?.image = getModifyTabbarItemImage("tabbar_destination_normal")
+//        tabbarItem?.selectedImage = getModifyTabbarItemImage("tabbar_destination_normal")
+        
         // 这个的确可以改变图片的位置，但是如何完全填充整个tabbarItem还是没解决
 //        tabbarItem?.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: -6, right: 0)
     }
@@ -50,6 +43,15 @@ class BreadtripTabBarController: UITabBarController
             self.printViewHierarchy(tempView as UIView)
         }
         --level
+    }
+    
+    // 返回修改后的tabbar item图片
+    func getModifyTabbarItemImage(imgName:String) -> UIImage? {
+        var image = UIImage(named: imgName)
+        image = scaleImageToSize(image, size: CGSize(width: 30, height: 30))
+        // 这里记得修改的是返回值！
+        image = image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        return image
     }
     
     // 修改图片大小和控件一致

@@ -203,7 +203,8 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
     
     // 改写行高为固定值
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 160
+//        return 160
+        return tableView.frame.size.width * 0.45;
     }
 }
 

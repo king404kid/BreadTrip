@@ -32,9 +32,9 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
         }
         
         // 实在找不到方法，强制画一个view作为导航栏的背景
-        var statusBg = UIView(frame: CGRect(x: 0, y: -20, width: 375, height: 20))
-        statusBg.backgroundColor = UIColor.blackColor()
-        self.navigationController?.navigationBar.addSubview(statusBg)
+//        var statusBg = UIView(frame: CGRect(x: 0, y: -20, width: 375, height: 20))
+//        statusBg.backgroundColor = UIColor.blackColor()
+//        self.navigationController?.navigationBar.addSubview(statusBg)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,9 +44,9 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     // 改用白色字体
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.LightContent
-    }
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return UIStatusBarStyle.LightContent
+//    }
     
     // 此方法可以用于以下情景：tabbar->nav->vc1->vc2->v3，想在vc1和vc3显示tabbar，vc2不显示，如果单纯的在vc1的prepareForSegue设置vc2的hidesBottomBarWhenPushed为true，是可以达到vc2隐藏，vc1显示的效果。问题是，vc3也同时会隐藏，即使在vc2的prepareForSegue设置vc2的hidesBottomBarWhenPushed为false也没用。官方的说法是：If YES, the bottom bar remains hidden until the view controller is popped from the stack.也就意味着，一天vc2还在栈里面，一天tabbar都还处于隐藏状态。对于此问题，解决方法有好几个，以下这个是其中之一。另外也可以在隐藏了vc2的tabbar之后马上把vc2的hidesBottomBarWhenPushed属性设回去false，这种方法就要时刻保证状态的正确性。还有一种做法是直接隐藏tabbarcontroller.tabbar，设置tabbar的hidden属性，也方便
     override var hidesBottomBarWhenPushed: Bool {

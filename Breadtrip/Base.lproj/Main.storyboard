@@ -34,14 +34,14 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recommendCell" rowHeight="200" id="ZkB-MQ-SOJ" customClass="RecommendTableViewCell" customModule="Breadtrip" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recommendCell" rowHeight="240" id="ZkB-MQ-SOJ" customClass="RecommendTableViewCell" customModule="Breadtrip" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZkB-MQ-SOJ" id="i0N-oV-eKi">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jdi-Dn-Jbi">
-                                                    <rect key="frame" x="16" y="13" width="568" height="186.5"/>
+                                                    <rect key="frame" x="16" y="13" width="568" height="226.5"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -61,14 +61,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hPa-62-tSW" secondAttribute="trailing" id="1a2-th-dhu"/>
                             <constraint firstItem="hPa-62-tSW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="2LD-mC-IuY"/>
                             <constraint firstItem="QWB-FV-JBL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="ROI-iO-G62"/>
+                            <constraint firstItem="QWB-FV-JBL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="UtE-rM-d2A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QWB-FV-JBL" secondAttribute="trailing" constant="-16" id="dCL-kZ-qP0"/>
                             <constraint firstItem="hPa-62-tSW" firstAttribute="top" secondItem="QWB-FV-JBL" secondAttribute="bottom" id="iS9-ir-dYS"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hPa-62-tSW" secondAttribute="bottom" id="nhl-1s-u9n"/>
                             <constraint firstItem="QWB-FV-JBL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="qY3-Za-1kU"/>
+                            <constraint firstAttribute="trailing" secondItem="QWB-FV-JBL" secondAttribute="trailing" id="soe-eR-c7b"/>
+                            <constraint firstItem="hPa-62-tSW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wTG-3I-6qf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hPa-62-tSW" secondAttribute="trailing" constant="-16" id="yp5-GL-Hwb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ROI-iO-G62"/>
+                                <exclude reference="dCL-kZ-qP0"/>
+                                <exclude reference="2LD-mC-IuY"/>
+                                <exclude reference="yp5-GL-Hwb"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Rrd-sN-Sua"/>
                     <connections>
@@ -371,13 +383,17 @@
                             <constraint firstAttribute="trailing" secondItem="0Fh-Ii-cqo" secondAttribute="trailing" id="5Xj-Zx-EFM"/>
                             <constraint firstItem="0Fh-Ii-cqo" firstAttribute="leading" secondItem="gxi-hp-Ljf" secondAttribute="leading" id="6Ry-X2-i2R"/>
                             <constraint firstItem="0Fh-Ii-cqo" firstAttribute="top" secondItem="ebx-S6-vcM" secondAttribute="bottom" id="Mog-UL-bgU"/>
+                            <constraint firstItem="ebx-S6-vcM" firstAttribute="leading" secondItem="gxi-hp-Ljf" secondAttribute="leading" id="THR-Ix-bVK"/>
                             <constraint firstItem="0Fh-Ii-cqo" firstAttribute="bottom" secondItem="vQj-Kl-xOs" secondAttribute="top" id="cY0-Ks-Nlj"/>
                             <constraint firstItem="ebx-S6-vcM" firstAttribute="leading" secondItem="gxi-hp-Ljf" secondAttribute="leadingMargin" constant="-16" id="oJy-5n-3fJ"/>
+                            <constraint firstAttribute="trailing" secondItem="ebx-S6-vcM" secondAttribute="trailing" id="rNd-4Q-y8Q"/>
                             <constraint firstItem="0Fh-Ii-cqo" firstAttribute="top" secondItem="gxi-hp-Ljf" secondAttribute="top" constant="20" symbolic="YES" id="vtz-Tz-mdO"/>
                             <constraint firstItem="ebx-S6-vcM" firstAttribute="top" secondItem="uj8-BQ-1jM" secondAttribute="bottom" id="zhX-Tx-7fd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="51s-WQ-oxC"/>
+                                <exclude reference="oJy-5n-3fJ"/>
                                 <exclude reference="vtz-Tz-mdO"/>
                             </mask>
                         </variation>

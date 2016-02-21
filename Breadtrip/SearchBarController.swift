@@ -16,7 +16,7 @@ import UIKit
 
 class SearchBarController: UIViewController, UITextFieldDelegate
 {
-    var delegate: SearchBarDelegate?
+    weak var delegate: SearchBarDelegate?
     
     @IBOutlet weak var searchBtn: UIButton!
     
