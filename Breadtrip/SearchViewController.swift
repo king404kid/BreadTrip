@@ -20,7 +20,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        println("search viewDidAppear")
+        print("search viewDidAppear")
         
 //        searchBarController!.setFristResponder()
 
@@ -63,7 +63,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     @IBOutlet weak var collectionView: UICollectionView! { // 先绑定，再viewDidLoad
         didSet {
-            let layout = collectionView.collectionViewLayout as UICollectionViewFlowLayout
+            let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
             layout.sectionInset = UIEdgeInsets(top: 0, left: CGFloat(SearchModel.instance.OFFSET), bottom: 0, right: CGFloat(SearchModel.instance.OFFSET))
         }
     }
@@ -79,7 +79,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     // 复用的cell
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchCell", forIndexPath: indexPath) as SearchViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("searchCell", forIndexPath: indexPath) as! SearchViewCell
         var list = SearchModel.instance.favoriteForeignPlaceList
         if indexPath.section == 2 {
             list = SearchModel.instance.favoriteDomesticPlaceList
@@ -93,7 +93,7 @@ class SearchViewController: UIViewController, UICollectionViewDataSource, UIColl
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var supplementaryView: UICollectionReusableView?
         if kind == UICollectionElementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "searchHeader", forIndexPath: indexPath) as SearchHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "searchHeader", forIndexPath: indexPath) as! SearchHeaderView
             let list = SearchModel.instance.headerList
             headerView.name.text = list[indexPath.section]
             supplementaryView = headerView

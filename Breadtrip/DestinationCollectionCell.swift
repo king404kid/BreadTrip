@@ -26,20 +26,20 @@ class DestinationCollectionCell: UICollectionViewCell
         initLayout()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func initLayout() {
         self.addSubview(imageBtn)
-        imageBtn.setTranslatesAutoresizingMaskIntoConstraints(false)
+        imageBtn.translatesAutoresizingMaskIntoConstraints = false
         imageBtn.layer.cornerRadius = 5
         imageBtn.layer.masksToBounds = true
         imageBtn.autoPinEdgesToSuperviewEdges()
         imageBtn.addTarget(self, action: "clickCell", forControlEvents: UIControlEvents.TouchUpInside)
         
         self.addSubview(nameLabel)
-        nameLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.textAlignment = NSTextAlignment.Center
         nameLabel.textColor = UIColor.whiteColor()
         nameLabel.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 5, bottom: 5, right: 5), excludingEdge: ALEdge.Top)

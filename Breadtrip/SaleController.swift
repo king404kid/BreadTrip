@@ -17,7 +17,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.automaticallyAdjustsScrollViewInsets = false
         
         // 不要延伸到底部
-        self.edgesForExtendedLayout = UIRectEdge.Top | UIRectEdge.Left | UIRectEdge.Right
+        self.edgesForExtendedLayout = [UIRectEdge.Top, UIRectEdge.Left, UIRectEdge.Right]
         
         initTitle()
         initFilterBar()
@@ -29,7 +29,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewWillAppear(animated)
         
         // 取消选中状态
-        if let selectedIndex = tableView?.indexPathForSelectedRow() {
+        if let selectedIndex = tableView?.indexPathForSelectedRow {
             tableView?.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
         }
     }
@@ -66,7 +66,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filterBarController = filterBarController ?? FilterBarController(nibName: nil, bundle: nil)
         self.addChildViewController(filterBarController!)
         self.view.addSubview(filterBarController!.view)
-        filterBarController!.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        filterBarController!.view.translatesAutoresizingMaskIntoConstraints = false
         filterBarController!.view.autoSetDimension(ALDimension.Height, toSize: CGFloat(FilterModel.instance.ITEM_HEIGHT))
         filterBarController!.view.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 20+44, left: 0, bottom: 0, right: 0), excludingEdge: ALEdge.Bottom)
     }
@@ -96,7 +96,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
         view.addSubview(bannerController!.view)
 //        bannerController!.view.frame = CGRect(x: 0, y: 0, width: 20, height: 145)
 //        tableView?.tableHeaderView = bannerController!.view
-        bannerController!.view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        bannerController!.view.translatesAutoresizingMaskIntoConstraints = false
         bannerController!.view.autoPinEdgesToSuperviewEdges()
     }
     
@@ -121,7 +121,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 创建table内容
     func initTable() {
         tableView = tableView ?? UITableView()
-        tableView?.setTranslatesAutoresizingMaskIntoConstraints(false)
+        tableView?.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tableView!)
         tableView!.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: ALEdge.Top)
         tableView!.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: filterBarController!.view)
@@ -138,7 +138,7 @@ class SaleController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let list = getContentList()
         let vo = list[indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier("SaleCell") as SaleTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("SaleCell") as! SaleTableCell
         cell.picView.image = UIImage(named: vo.pic)
         cell.titleLabel.text = vo.title
         cell.dateLable.text = "出发日期：\(vo.dateArray)"

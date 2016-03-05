@@ -23,6 +23,6 @@ class SearchViewCell: UICollectionViewCell
     
     // 选择地点
     @IBAction func choosePlace(sender: UIButton) {
-        println("sender name: \(sender.currentTitle!)")
+        print("sender name: \(sender.currentTitle!)")
     }
 }

@@ -27,7 +27,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
 //        self.tabBarController?.tabBar.hidden = true
         
         // 取消选中状态
-        if let selectedIndex = nearbyTableView.indexPathForSelectedRow() {
+        if let selectedIndex = nearbyTableView.indexPathForSelectedRow {
             nearbyTableView.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
         }
         
@@ -63,7 +63,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     @IBOutlet weak var nearbyCollectionView: UICollectionView! {
         didSet {
             nearbyCollectionView.showsHorizontalScrollIndicator = false
-            let layout = nearbyCollectionView.collectionViewLayout as UICollectionViewFlowLayout
+            let layout = nearbyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
             layout.itemSize = CGSize(width: 80, height: 49) // 为了显示一行，这里的高度要跟collectionview高度一样
             
 //            let num = NearbyModel.instance.typeList.count
@@ -86,7 +86,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
             self.selectedCell?.animateSelected = true
             // 把cell里面的按钮坐标转换成全局坐标，注意参数的顺序(toView与fromView)
             originFrame = cell.convertRect(cell.nearbyItem.frame, toView: self.view)
-            var layout = nearbyCollectionView.collectionViewLayout as UICollectionViewFlowLayout
+            let layout = nearbyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
             // 这里要算出第一个的准确位置，由于默认有可能不是第一个，所以要减去多余偏移
             originFrame?.origin.x -= layout.itemSize.width * CGFloat(row)
             lastName = cell.nearbyItem.currentTitle
@@ -106,7 +106,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     func drawSlider() {
         if originFrame != nil {
             var frame = originFrame!
-            var layout = nearbyCollectionView.collectionViewLayout as UICollectionViewFlowLayout
+            let layout = nearbyCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
             // 计算上次选中cell的位置，由于复用的原因，不能简单的通过记录cell变量来获取，而要通过偏移计算
             frame.origin.x += layout.itemSize.width * lastIndex - nearbyCollectionView.contentOffset.x
             slider = slider ?? UIView()
@@ -122,7 +122,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     func animateSlider() {
         if selectedCell != nil {
             UIView.animateWithDuration(0.5, animations: { () -> Void in
-                var frame = self.selectedCell!.convertRect(self.selectedCell!.nearbyItem.frame, toView: self.view)
+                let frame = self.selectedCell!.convertRect(self.selectedCell!.nearbyItem.frame, toView: self.view)
                 self.slider?.frame = CGRect(origin: frame.origin, size: frame.size)
             }) { (finished) -> Void in
                 self.selectedCell?.animateSelected = true
@@ -143,7 +143,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCellWithReuseIdentifier("nearbyCollectionCell", forIndexPath: indexPath) as NearbyCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("nearbyCollectionCell", forIndexPath: indexPath) as! NearbyCollectionCell
         let list = NearbyModel.instance.typeList
         cell.nearbyItem.setTitle(list[indexPath.row], forState: UIControlState.Normal)
         // 因为复用的原因，所以每次更新值的时候要检测选中状态
@@ -188,13 +188,13 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     func refresh() {
         if let control = refreshControl {
             control.beginRefreshing()
-            var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerHandler:", userInfo: nil, repeats: false)
+            NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerHandler:", userInfo: nil, repeats: false)
         }
     }
     
     // 模拟触发刷新
     func timerHandler(timer: NSTimer) {
-        println("timer trigger")
+        print("timer trigger")
         if let control = refreshControl {
             refreshView(control)
         }
@@ -209,7 +209,7 @@ class NearbyViewController: UIViewController, UICollectionViewDataSource, UIColl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("nearbyTableCell") as NearbyTableCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("nearbyTableCell") as! NearbyTableCell
         let list = NearbyModel.instance.nearbyList[Int(selectedIndex)]
         assert(indexPath.row < list.count, "索引超出范围")
         let vo = list[indexPath.row]

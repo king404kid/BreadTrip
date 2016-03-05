@@ -37,7 +37,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
 //        initContainer()
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -81,7 +81,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         let gesture3 = UITapGestureRecognizer(target: self, action: "chooseHandler1:")
         let gesture4 = UITapGestureRecognizer(target: self, action: "chooseHandler1:")
         
-        item1.setTranslatesAutoresizingMaskIntoConstraints(false)
+        item1.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(item1)
         item1.autoPinEdgeToSuperviewEdge(ALEdge.Left)
         item1.autoPinEdgeToSuperviewEdge(ALEdge.Top)
@@ -90,7 +90,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         item1.addGestureRecognizer(gesture1)
         item1.setColor(UIColor(red: 43/255, green: 235/255, blue: 255/255, alpha: 1))
         
-        item2.setTranslatesAutoresizingMaskIntoConstraints(false)
+        item2.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(item2)
         item2.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: item1)
         item2.autoPinEdgeToSuperviewEdge(ALEdge.Top)
@@ -98,7 +98,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         item2.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view, withMultiplier: 1/4)
         item2.addGestureRecognizer(gesture2)
         
-        item3.setTranslatesAutoresizingMaskIntoConstraints(false)
+        item3.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(item3)
         item3.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: item2)
         item3.autoPinEdgeToSuperviewEdge(ALEdge.Top)
@@ -106,7 +106,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         item3.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: self.view, withMultiplier: 1/4)
         item3.addGestureRecognizer(gesture3)
         
-        item4.setTranslatesAutoresizingMaskIntoConstraints(false)
+        item4.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(item4)
         item4.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: item3)
         item4.autoPinEdgeToSuperviewEdge(ALEdge.Top)
@@ -143,7 +143,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
 //                println("lefttable 数据加载完成")
 //            }
             leftTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
-            println("由于reloadData是异步执行的，所以会比其他信息早出现")
+            print("由于reloadData是异步执行的，所以会比其他信息早出现")
             rightTable.reloadData()
             leftTable.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.Top, animated: false)
             
@@ -205,7 +205,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
     func initContainer() {
         grayViewBg.backgroundColor = UIColor.grayColor()
         grayViewBg.alpha = 0.4
-        grayViewBg.setTranslatesAutoresizingMaskIntoConstraints(false)
+        grayViewBg.translatesAutoresizingMaskIntoConstraints = false
         self.view.insertSubview(grayViewBg, atIndex: 0)
         grayViewBg.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: self.view)
         grayViewBg.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: self.view)
@@ -215,10 +215,10 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         let tapGrayViewGesture = UITapGestureRecognizer(target: self, action: "tapGrapView:")
         grayViewBg.addGestureRecognizer(tapGrayViewGesture)
         
-        container.setTranslatesAutoresizingMaskIntoConstraints(false)
+        container.translatesAutoresizingMaskIntoConstraints = false
         self.view.insertSubview(container, aboveSubview: grayViewBg)
         container.autoSetDimension(ALDimension.Height, toSize: CGFloat(FilterModel.instance.ITEM_HEIGHT * FilterModel.instance.ITEM_NUM))
-        var arr = container.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: ALEdge.Top) as Array<NSLayoutConstraint>
+        let arr = container.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: ALEdge.Top) as Array<NSLayoutConstraint>
         bottomConstraint = getConstraintByAttribute(NSLayoutAttribute.Bottom, andArr: arr)
 //        bottomConstraint = NSLayoutConstraint(item: container, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1.0, constant: 0)
         container.hidden = bg.isFolding
@@ -227,7 +227,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         leftTable.delegate = self
         leftTable.dataSource = self
         leftTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "leftCell")
-        leftTable.setTranslatesAutoresizingMaskIntoConstraints(false)
+        leftTable.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(leftTable)
         leftTable.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: ALEdge.Right)
         leftTable.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: container, withMultiplier: 1/2)
@@ -238,7 +238,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         rightTable.delegate = self
         rightTable.dataSource = self
         rightTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "rightCell")
-        rightTable.setTranslatesAutoresizingMaskIntoConstraints(false)
+        rightTable.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(rightTable)
         rightTable.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsetsZero, excludingEdge: ALEdge.Left)
         rightTable.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Width, ofView: container, withMultiplier: 1/2)
@@ -268,7 +268,7 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
         // 1. leftTable: 设置cell的preservesSuperviewLayoutMargins为false，layoutMargins为UIEdgeInsetsZero，separatorInset为UIEdgeInsetsZero
         // 2. rightTable: 设置table的layoutMargins为UIEdgeInsetsZero，separatorInset为UIEdgeInsetsZero，设置cell的layoutMargins为UIEdgeInsetsZero，separatorInset为UIEdgeInsetsZero
         if tableView == leftTable {
-            let cell = tableView.dequeueReusableCellWithIdentifier("leftCell") as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("leftCell")!
             let saleFilterVo = SaleModel.instance.filterList[selectedIndex1]
             cell.textLabel?.text = saleFilterVo.arr[indexPath.row].name
             cell.preservesSuperviewLayoutMargins = false
@@ -282,10 +282,10 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
             } else {
                 cell.textLabel?.highlighted = false
             }
-            println("lefttable cellForRowAtIndexPath: \(indexPath.row)")
+            print("lefttable cellForRowAtIndexPath: \(indexPath.row)")
             return cell
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("rightCell") as UITableViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("rightCell")!
             let saleFilterVo = SaleModel.instance.filterList[selectedIndex1]
             let saleTypeVo = saleFilterVo.arr[selectedIndex2]
             cell.textLabel?.text = saleTypeVo.arr[indexPath.row].name
@@ -321,13 +321,13 @@ class FilterBarController: UIViewController, UITableViewDelegate, UITableViewDat
     // 此方法在设置了cell的data后(cellForRowAtIndexPath)调用，可以用于判断加载到第几个cell。这里使用到一个场景，例如你要reloadData后知道什么时候完成，就可以通过判断最后一个来确定是否加载完成。需要注意的是，由于reloadData后，主线程那时候会变得很忙，这时我们发送一个异步信息，该信息会等到主线程忙完(完成reloadData后)再去触发，所以网上也有说直接在reloadData后面加一个异步信息就好
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         if tableView == leftTable {
-            println("lefttable willDisplayCell: \(indexPath.row)")
+            print("lefttable willDisplayCell: \(indexPath.row)")
         }
         if tableView == leftTable {
-            if let rowPath = tableView.indexPathsForVisibleRows()?.last as? NSIndexPath {
+            if let rowPath = tableView.indexPathsForVisibleRows?.last {
                 if rowPath.row == indexPath.row {
                     dispatch_async(dispatch_get_main_queue()) {
-                        println("lefttable 数据加载完成，row \(rowPath.row)")
+                        print("lefttable 数据加载完成，row \(rowPath.row)")
                     }
                 }
             }

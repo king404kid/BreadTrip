@@ -30,8 +30,8 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
 //        frame.origin = CGPointZero
 //        searchBarController!.view.frame = frame
         
-        var contentView = searchBarController!.view
-        contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let contentView = searchBarController!.view
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         let left = NSLayoutConstraint(item: contentView, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: searchBarContainer, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         left.active = true
         let right = NSLayoutConstraint(item: contentView, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: searchBarContainer, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
@@ -95,7 +95,7 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
 //        self.tabBarController?.tabBar.hidden = false
         
         // 取消选中状态
-        if let selectedIndex = recommendTable.indexPathForSelectedRow() {
+        if let selectedIndex = recommendTable.indexPathForSelectedRow {
             recommendTable.deselectRowAtIndexPath(selectedIndex, animated: false)  // 注意调用后的选中index已经不存在了
         }
     }
@@ -122,7 +122,7 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
                 return unwindSegue
             }
         }
-        return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)
+        return super.segueForUnwindingToViewController(toViewController, fromViewController: fromViewController, identifier: identifier)!
     }
     
     // 可以通过次方法来隐藏tabbar，或者直接在sb里面勾选nearbyviewcontroller里面的hidesBottomBarWhenPushed，但是有一点不明白的是，通过这个属性来隐藏tabbar，会有明显的切换动画，不知道如何去掉，可以考虑直接隐藏tabbar来处理
@@ -170,7 +170,7 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
     
     // 点击图片
     func bannerImageTap(index: Int) {
-        bannerDetailController = bannerDetailController ?? self.storyboard?.instantiateViewControllerWithIdentifier("bannerDetail") as? UIViewController
+        bannerDetailController = bannerDetailController ?? self.storyboard?.instantiateViewControllerWithIdentifier("bannerDetail")
         self.navigationController?.pushViewController(bannerDetailController!, animated: true)
     }
     
@@ -193,7 +193,7 @@ class RecommendController: UIViewController, UITableViewDataSource, UITableViewD
     
     // 设置某行
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("recommendCell", forIndexPath: indexPath) as RecommendTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("recommendCell", forIndexPath: indexPath) as! RecommendTableViewCell
 //        cell.selectionStyle = UITableViewCellSelectionStyle.None  // 不需要选中状态
         let recommendVoList = RecommendModel.instance.recommendVoList
         let recommendVo = recommendVoList[indexPath.row]

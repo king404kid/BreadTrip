@@ -16,7 +16,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
 //        testPureLayout()
         
         // 不要延伸到底部
-        self.edgesForExtendedLayout = UIRectEdge.Top | UIRectEdge.Left | UIRectEdge.Right
+        self.edgesForExtendedLayout = [UIRectEdge.Top, UIRectEdge.Left, UIRectEdge.Right]
         
         initSearchBar()
         initCollectionView()
@@ -48,7 +48,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
         searchBarController = searchBarController ?? SearchBarController(nibName: "SearchBarController", bundle: nil)
         self.addChildViewController(searchBarController!)
         self.view.addSubview(searchBar!)
-        searchBar!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        searchBar!.translatesAutoresizingMaskIntoConstraints = false
         searchBar!.autoSetDimension(ALDimension.Height, toSize: 50)
         searchBar!.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0), excludingEdge: ALEdge.Bottom)
     }
@@ -75,10 +75,10 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     
     // 手工设置collectionview
     func initCollectionView() {
-        var layout = UICollectionViewFlowLayout()
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = UICollectionViewScrollDirection.Vertical
         collectionView = collectionView ?? UICollectionView(frame: CGRect(x: 0, y: 0, width: 200, height: 200), collectionViewLayout: layout)
-        collectionView!.setTranslatesAutoresizingMaskIntoConstraints(false)
+        collectionView!.translatesAutoresizingMaskIntoConstraints = false
 //        collectionView!.backgroundColor = UIColor.greenColor()
         self.view.addSubview(collectionView!)
         collectionView!.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: ALEdge.Top)    // 设置autoLayout的同时会忽略之前设置的frame
@@ -97,7 +97,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     
     // 复用cell
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("destinationCollectionCell", forIndexPath: indexPath) as DestinationCollectionCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("destinationCollectionCell", forIndexPath: indexPath) as! DestinationCollectionCell
         cell.delegate = self
         let vo = DestinationModel.instance.destinationList[indexPath.section][indexPath.row]
         cell.setTitle(vo.name)
@@ -109,7 +109,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         var supplementaryView: UICollectionReusableView?
         if kind == UICollectionElementKindSectionHeader {
-            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "destinationCollectionHeader", forIndexPath: indexPath) as DestinationCollectionHeader
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "destinationCollectionHeader", forIndexPath: indexPath) as! DestinationCollectionHeader
             let title = DestinationModel.instance.typeList[indexPath.section]
             headerView.setTitle(title)
             supplementaryView = headerView
@@ -154,7 +154,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     
     // 点击某个cell
     func clickCell(destinationName: String) {
-        println(destinationName)
+        print(destinationName)
         
         detailViewController = detailViewController ?? DestinationDetailController()
         self.navigationController?.pushViewController(detailViewController!, animated: true)
@@ -164,7 +164,7 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     
     // 测试PureLayout
     func testPureLayout() {
-        var view = createView()
+        let view = createView()
         view.backgroundColor = UIColor.greenColor()
         self.view.addSubview(view)
         view.autoSetDimension(ALDimension.Height, toSize: 70.0)
@@ -172,8 +172,8 @@ class DestinationController: UIViewController, SearchBarDelegate, UICollectionVi
     }
     
     func createView() -> UIView {
-        var view = UIView()
-        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }
 }

@@ -32,7 +32,7 @@ class FilterBgView: UIView
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        println("测试fitlerBgView的layoutSubviews次数: \(layoutTime++)")
+        print("测试fitlerBgView的layoutSubviews次数: \(layoutTime++)")
     }
     
     var layoutTime: Int = 1

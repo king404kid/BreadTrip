@@ -18,7 +18,7 @@ class NearbyCollectionCell: UICollectionViewCell
         set {
             super.selected = newValue
             if selected {
-                println(nearbyItem.currentTitle!)
+                print(nearbyItem.currentTitle!)
             }
         }
     }

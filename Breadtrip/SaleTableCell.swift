@@ -30,7 +30,7 @@ class SaleTableCell: UITableViewCell
         initLayout()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -38,13 +38,13 @@ class SaleTableCell: UITableViewCell
     func initLayout() {
         picView.layer.masksToBounds = true
         picView.layer.cornerRadius = 5
-        picView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        picView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(picView)
         picView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 0), excludingEdge: ALEdge.Right)
         picView.autoMatchDimension(ALDimension.Width, toDimension: ALDimension.Height, ofView: picView)
         
         titleLabel.numberOfLines = 0
-        titleLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(titleLabel)
         titleLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: picView, withOffset: 10)
         titleLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Top, ofView: picView, withOffset: 0)
@@ -53,7 +53,7 @@ class SaleTableCell: UITableViewCell
         dateLable.numberOfLines = 0
         dateLable.font = UIFont(name: dateLable.font.fontName, size: 12)
         dateLable.textColor = UIColor.grayColor()
-        dateLable.setTranslatesAutoresizingMaskIntoConstraints(false)
+        dateLable.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(dateLable)
         dateLable.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: picView, withOffset: 10)
         dateLable.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: titleLabel, withOffset: 5)
@@ -62,7 +62,7 @@ class SaleTableCell: UITableViewCell
         placeLabel.numberOfLines = 0
         placeLabel.font = UIFont(name: placeLabel.font.fontName, size: 12)
         placeLabel.textColor = UIColor.grayColor()
-        placeLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        placeLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(placeLabel)
         placeLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: picView, withOffset: 10)
         placeLabel.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: dateLable, withOffset: 5)
@@ -70,14 +70,14 @@ class SaleTableCell: UITableViewCell
         
         salePriceLabel.font = UIFont(name: placeLabel.font.fontName, size: 20)
         salePriceLabel.textColor = UIColor.orangeColor()
-        salePriceLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        salePriceLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(salePriceLabel)
         salePriceLabel.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Right, ofView: picView, withOffset: 12)
         salePriceLabel.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: picView, withOffset: 0)
         
         originPriceLabel.font = UIFont(name: originPriceLabel.font.fontName, size: 12)
         originPriceLabel.textColor = UIColor.grayColor()
-        originPriceLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        originPriceLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(originPriceLabel)
         originPriceLabel.autoPinEdgeToSuperviewEdge(ALEdge.Right, withInset: 10)
         originPriceLabel.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: picView, withOffset: 0)

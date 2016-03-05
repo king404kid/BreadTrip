@@ -31,12 +31,12 @@ class BreadtripTabBarController: UITabBarController
     // 打印view的层次结构
     func printViewHierarchy(superView: UIView) {
         for (var i:Int = 0; i < level; i++){
-            print("\t");
+            print("\t", terminator: "");
         }
         // swift这里还不可以实现反射获取类名
 //        let className = object_getClassName(superView)
 //        println("\(className):")
-        println("frame: \(superView.frame)")
+        print("frame: \(superView.frame)")
         
         ++level
         for tempView in superView.subviews {
@@ -58,7 +58,7 @@ class BreadtripTabBarController: UITabBarController
     func scaleImageToSize(img:UIImage?, size:CGSize) -> UIImage? {
         UIGraphicsBeginImageContext(size)
         img?.drawInRect(CGRect(x: 0, y: 0, width: size.width, height: size.height))
-        var scaledImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        let scaledImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         return scaledImage
     }

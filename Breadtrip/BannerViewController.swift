@@ -84,7 +84,7 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
             index = 0
         }
         if let pagesScrollViewSize = pageFrame?.size {
-            var origin = CGPoint(x: pagesScrollViewSize.width, y: 0)
+            let origin = CGPoint(x: pagesScrollViewSize.width, y: 0)
             bannerScrollView.contentOffset = origin
             bannerIndex = index
             bannerPage.currentPage = bannerIndex
@@ -96,7 +96,7 @@ class BannerViewController: UIViewController, UIScrollViewDelegate
     
     // 这里不能加private前缀，要不然找不到次方法，又被坑了好久
     func imageTap(sender: UITapGestureRecognizer) {
-        let imageView = sender.view as? UIImageView
+//        let imageView = sender.view as? UIImageView
         delegate?.bannerImageTap(bannerIndex)
     }
     

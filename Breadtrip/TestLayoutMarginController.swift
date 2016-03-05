@@ -25,7 +25,7 @@ class TestLayoutMarginController: UIViewController
 //        blueView.preservesSuperviewLayoutMargins = true
         blueView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         blueView.backgroundColor = UIColor.blueColor()
-        blueView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        blueView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(blueView)
         blueView.autoPinEdgesToSuperviewEdges()
         
@@ -33,7 +33,7 @@ class TestLayoutMarginController: UIViewController
         yellowView.preservesSuperviewLayoutMargins = true
         yellowView.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         yellowView.backgroundColor = UIColor.yellowColor()
-        yellowView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        yellowView.translatesAutoresizingMaskIntoConstraints = false
         blueView.addSubview(yellowView)
         yellowView.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         yellowView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
@@ -42,14 +42,14 @@ class TestLayoutMarginController: UIViewController
         
         let greenView = UIView()
         greenView.backgroundColor = UIColor.greenColor()
-        greenView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        greenView.translatesAutoresizingMaskIntoConstraints = false
         yellowView.addSubview(greenView)
         greenView.preservesSuperviewLayoutMargins = true
         greenView.autoPinEdgesToSuperviewMargins()
         
         let blackView = UIView()
         blackView.backgroundColor = UIColor.blackColor()
-        blackView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        blackView.translatesAutoresizingMaskIntoConstraints = false
         greenView.addSubview(blackView)
 //        blackView.preservesSuperviewLayoutMargins = true
         blackView.autoPinEdgesToSuperviewMargins()

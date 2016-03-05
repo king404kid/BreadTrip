@@ -16,7 +16,7 @@ class SearchHeaderView: UICollectionReusableView
     
     override func drawRect(rect: CGRect) {
         // 画一根线
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         let startPoint = CGPoint(x: CGFloat(SearchModel.instance.OFFSET), y: bounds.height - 10)
         let endPoint = CGPoint(x: bounds.width - CGFloat(SearchModel.instance.OFFSET), y: bounds.height - 10)
         path.lineWidth = 1

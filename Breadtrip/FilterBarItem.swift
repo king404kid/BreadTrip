@@ -34,12 +34,12 @@ class FilterBarItem: UIView
         initLayout()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func initLayout() {
-        btn.setTranslatesAutoresizingMaskIntoConstraints(false)
+        btn.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(btn)
         btn.autoPinEdgesToSuperviewEdges()
         btn.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
